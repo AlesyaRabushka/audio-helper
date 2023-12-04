@@ -1,0 +1,12 @@
+.chat-component{
+    width: calc(50%);
+    min-height: 700px;
+
+    background-color: rgb(249, 249, 252);
+
+    border-radius: 20px;
+    border: 2px solid rgb(123, 45, 212);
+
+    margin-top: calc(5%);
+    margin-bottom: calc(10%);
+}
