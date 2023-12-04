@@ -9,4 +9,82 @@
 
     margin-top: calc(5%);
     margin-bottom: calc(10%);
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.dialogue-field{
+    width: calc(95%);
+    height: 600px;
+
+    border-radius: 20px;
+    border: 1px solid rgb(233, 211, 245);
+
+    background-color: rgb(236, 230, 248);
+
+    margin-top: calc(2%);
+    margin-bottom: calc(1%);
+}
+
+.input-form{
+    width: calc(100%);
+
+    display: flex;
+    flex-direction: row;
+}
+
+.input-field{
+    width: calc(85%);
+    height: 50px;
+
+    border-radius: 20px;
+
+    font-size: large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+    padding-left: calc(1%);
+
+    margin-bottom: calc(1%);
+    margin-left: calc(2%);
+}
+
+
+.menu-button{
+    width: calc(5%);
+    height: 50px;
+
+    border-radius: 25px;
+    border: 1px solid rgb(121, 41, 168);
+
+    background-color: rgb(178, 110, 241);
+
+
+    margin-left: calc(1%);
+}
+
+.menu-button:hover{
+    background-color: rgb(192, 136, 245);
+
+    cursor:pointer;
+}
+
+.send-icon{
+    color: white;
+
+    margin-top: 5px;
+    margin-left: 3px;
+}
+
+.helper{
+    margin-top: 5px;
+
+    color:rgb(123, 45, 212)
+}
+
+.helper:hover {
+    cursor:help;
+
+    color:rgb(178, 110, 241);
 }
