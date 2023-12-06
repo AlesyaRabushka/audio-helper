@@ -40,6 +40,9 @@
     height: 50px;
 
     border-radius: 20px;
+    border: 2px solid rgb(195, 99, 240);
+
+    box-shadow: 2px 3px rgb(222, 176, 243);
 
     font-size: large;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -48,6 +51,9 @@
 
     margin-bottom: calc(1%);
     margin-left: calc(2%);
+
+    outline: none;
+    text-decoration: none;
 }
 
 
@@ -70,6 +76,8 @@
     cursor:pointer;
 }
 
+
+
 .send-icon{
     color: white;
 
@@ -84,7 +92,25 @@
 }
 
 .helper:hover {
-    cursor:help;
+    cursor: pointer;
 
     color:rgb(178, 110, 241);
 }
+
+.menu-tooltip{
+    /* position: absolute; */
+    background-color: rgb(10, 91, 167);
+    color: rgb(153, 34, 34);
+    padding: 5px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 1s;
+    /* top: -10px; */
+    /* left: 10px; */
+    width: max-content;
+}
+
+.helper:hover .menu-tooltip{
+    opacity: 1.0;
+}
+

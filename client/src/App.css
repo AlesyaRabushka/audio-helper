@@ -1,11 +1,13 @@
 .App {
   width: calc(100%);
+  height: 100vh;
 
   text-align: center;
 
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
   align-items: center;
+  justify-content: center;
 
-  background: linear-gradient(rgb(122, 107, 207), rgb(176, 101, 206));
+  /* background: linear-gradient(rgb(122, 107, 207), rgb(176, 101, 206)); */
 }

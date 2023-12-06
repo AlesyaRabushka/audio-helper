@@ -2,10 +2,17 @@ import React, { useState } from "react";
 import "./chatComponent.css"
 import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
 import SendIcon from '@mui/icons-material/Send';
+import menu from "../../lists/menuBar";
+import SpeechRecognitionExample from "../../helpers/speech-recognition";
 
 export const ChatComponent = () => {
     const [textValue, setTextValue] = useState('')
+    const [isMenuBar, setIsMenuBar] = useState(false);
 
+
+    const showMenuBar = () => {
+        setIsMenuBar(!isMenuBar)
+    }
 
     return (
         <div className="chat-component">
@@ -21,8 +28,23 @@ export const ChatComponent = () => {
                 <div className="menu-button">
                     <SendIcon fontSize="large" className="send-icon"/>
                 </div>
-                <QuestionMarkIcon fontSize="large" className="helper"/>
+                <QuestionMarkIcon fontSize="large" className="helper" onClick={showMenuBar}>
+                    
+                <span className="menu-tooltip">xnjxnjxnxxj</span>
+                    </QuestionMarkIcon>
             </div>
+
+            {isMenuBar &&
+                <div className="menubar">
+                    {menu.map(item => 
+                        <div>
+                            {item['name']}
+                        </div>)}
+                </div>
+            }
+
+
+            <SpeechRecognitionExample/>
         </div>
     )
 }
