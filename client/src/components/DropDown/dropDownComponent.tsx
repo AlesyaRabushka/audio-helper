@@ -22,7 +22,7 @@ export const DropDownComponent = ({name, menu, value, setValue}: {name:string, m
     const handleLangChange = (item:string) => {
         setCurrentName(item)
         if (item == 'English'){
-            setValue('en-US')
+            setValue('en')
         } else{
             if (item == 'Русский'){
                 setValue('ru')

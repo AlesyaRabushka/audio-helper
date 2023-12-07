@@ -4,6 +4,7 @@ import { DropDownComponent } from "../DropDown/dropDownComponent";
 import { ScaleLoader } from "react-spinners";
 
 export const TextToSpeechComponent = () => {
+    // text to speech recognition
     const [text, setText] = useState('');
     const [lang, setLang] = useState('en-US');
     const [voice, setVoice] = useState('English (America)+Michael');
@@ -11,6 +12,7 @@ export const TextToSpeechComponent = () => {
     const speechSynthesis = window.speechSynthesis;
     const utterance = new SpeechSynthesisUtterance(text);
     const allVoices = speechSynthesis.getVoices();
+    console.log(allVoices)
     const [currentVoice, setCurrentVoice] = useState(allVoices[0]);
 
 
@@ -23,6 +25,7 @@ export const TextToSpeechComponent = () => {
 
     
     
+    
 
     useEffect(() => {
         let voicesArray = new Array<string>;
@@ -30,8 +33,8 @@ export const TextToSpeechComponent = () => {
         let voicesRuArray = new Array<any>;
 
         for (let i = 0; i < allVoices.length; i++){
-            if (lang == 'en-US'){
-                if (allVoices[i].lang == 'en-US'){
+            if (lang == 'en'){
+                if (allVoices[i].lang.includes(lang)){
                     voicesArray.push(allVoices[i].name)
                     voicesEnArray.push(allVoices[i])
                     if (allVoices[i].name == voice){
@@ -39,7 +42,7 @@ export const TextToSpeechComponent = () => {
                     }
                 }
             } else if (lang == 'ru'){
-                if (allVoices[i].lang == 'ru'){
+                if (allVoices[i].lang.includes('ru')){
                     voicesArray.push(allVoices[i].name)
                     voicesRuArray.push(allVoices[i]);
                     if (allVoices[i].name == voice){
@@ -50,25 +53,19 @@ export const TextToSpeechComponent = () => {
         }
 
 
-
         setVoices(voicesArray);
         setEnVoices(voicesEnArray);
         setRuVoices(voicesRuArray);
+
         
     }, [lang, voice])
     
-    // console.log(a)
 
     const handleSpeek = () => {
         utterance.lang = lang;
         utterance.voice = currentVoice;
-
-        console.log('before',speechSynthesis.speaking)
         
         speechSynthesis.speak(utterance);
-        
-        const v = speechSynthesis.speaking
-        console.log('after',v)
         setSpeaking(true)
     };
 
@@ -91,7 +88,9 @@ export const TextToSpeechComponent = () => {
                 <DropDownComponent name="Язык" menu={['English', 'Русский']} value={lang} setValue={setLang}/>
                 <DropDownComponent name="Голос" menu={voices} value={voice} setValue={setVoice}/>
             </div>
-            <div className="go-back-button speek-button" onClick={handleSpeek}>Озвучить</div>
+            {!speaking &&
+                <div className="go-back-button speek-button" onClick={handleSpeek}>Озвучить</div>
+            }
             {speaking && 
                 <>
                     <ScaleLoader color="white" height={50} style={{marginTop: "20px"}}/>
