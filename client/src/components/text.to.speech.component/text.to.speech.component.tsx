@@ -62,10 +62,20 @@ export const TextToSpeechComponent = () => {
     
 
     const handleSpeek = () => {
-        utterance.lang = lang;
-        utterance.voice = currentVoice;
+        const maxL = 50;
+        const newText = text.split('.')
+        console.log(newText)
+        newText.forEach((item) => {
+            const utt = new SpeechSynthesisUtterance(item);
+            utt.lang = lang;
+            utt.voice = currentVoice;
+            console.log('utt', utt)
+            speechSynthesis.speak(utt)
+        })
+        // utterance.lang = lang;
+        // utterance.voice = currentVoice;
         
-        speechSynthesis.speak(utterance);
+        // speechSynthesis.speak(utterance);
         setSpeaking(true)
     };
 

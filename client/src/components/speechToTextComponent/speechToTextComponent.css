@@ -19,11 +19,11 @@
     border: 1px solid white;
 
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
 
     overflow: auto;
 
-    margin-top: calc(5%);
+    margin-top: calc(10%);
     padding-bottom: calc(5%);
     padding-left: calc(2%);
 }
@@ -48,10 +48,8 @@
     border: 1px solid none;
 
     color: white;
-    
-    background-color: rgb(199, 108, 252);
 
-    box-shadow: 1px 2px rgb(197, 8, 197);
+    
 
     display: flex;
     align-items: center;
@@ -66,4 +64,12 @@
 
 .type-user{
     margin-left: calc(60%);
+    margin-right: calc(3%);
+    background-color: rgb(108, 170, 252);
+    box-shadow: 1px 2px rgb(36, 8, 197);
+}
+
+.type-bot{
+    background-color: rgb(199, 108, 252);
+    box-shadow: 1px 2px rgb(197, 8, 197);
 }
